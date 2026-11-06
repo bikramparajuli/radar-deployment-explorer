@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: radar-deployment-explorer
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /healthz
+    envVars:
+      - key: RADAR_CACHE_DIR
+        value: /tmp/radar-hrrr-cache
